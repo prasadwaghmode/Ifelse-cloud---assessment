@@ -1,0 +1,69 @@
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="recent_order">
+            <h4>Recent Orders</h4>
+            <div class="fixTableHead">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Customer</th>
+                        <th>Products</th>
+                        <th>Delivery Date</th>
+                        <th>Status</th>
+                        <th>Tracking No.</th>
+                        <th>Shipping</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let olduser of cardsData?.recent_orders">
+                      <tr>
+                        <th >{{olduser.id.split("-")[0]}}</th>
+                        <td>{{olduser.name}}</td>
+                        <td>{{olduser.product}}</td>
+                        <td>{{olduser.delivery_date | date}}</td>
+                        <td><span [class]="olduser.status == 'Paid' ? 'badge bg-success' : olduser.status == 'Pending' ? 'badge bg-warning'  : 'badge bg-danger' ">{{olduser.status}}</span></td>
+                        <td>{{olduser.tracking_no}}</td>
+                        <td>{{olduser.shipping == true ? 'Yes' : 'No'}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-5">
+            <div class="recent_order">
+            <h4>New User Registrations</h4>
+            <div class="fixTableHead">
+                <table class="table">
+                    <tbody *ngFor="let user of cardsData?.new_users">
+                      <tr>
+                        <td class="profile">
+                            <div class="profile-image">
+                                <img src="{{ user.picture }}" alt="User Profile" />
+                              </div>
+                        </td>
+                        <td class="name">
+                            <div class="">{{user.name}}</div>
+                            <div class="">{{user.country}}</div>
+                        </td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar" [style.width]="user.progress + '%'"></div>
+                                <div class="progress-value">{{ user.progress }}%</div>
+                              </div>
+                        </td>
+                        <td class="btn-action">
+                            <span [class]="user.isActive == true ? 'badge bg-success' : 'badge bg-danger' ">{{user.isActive == true ? 'Active' : 'Deactive' }}</span>
+                        </td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor = "let card of cardsData?.top_cards">
+            <div [class]="card.value == '15' ?  'card' : 'card1'">
+                <div class="card-title">
+                  <i [class]="card.value == '15' ?  'card-icon fa fa-car' : card.value == '30' ? 'card-icon1 fa fa-home' : card.value == '35' ? ' card-icon1 fa fa-briefcase' : card.value == '9' ?  'card-icon1 fa fa-graduation-cap'  :'card-icon1 fa fa-calendar'"></i>
+                </div>
+                <div class="Details">
+                  <h1 [class]="card.value == '15' ? 'card-label1' : 'card-label' ">{{card.value}}%</h1>
+                  <p [class]="card.value == '15' ? 'card-name' : 'card-name1'">{{card.header}}</p>
+                  <p [class]="card.value == '15' ? 'card-description1' : 'card-description'">{{card.sub_header}}</p>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

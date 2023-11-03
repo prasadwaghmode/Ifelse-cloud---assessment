@@ -1,0 +1,33 @@
+.profile-image img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .progress-bar {
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  .progress-value {
+    font-weight: bold;
+  }
+
+  .profile{
+    width: 50px;
+}
+.name{
+    width: 130px;
+}
+.btn-action{
+    width: 20px
+}
+  
