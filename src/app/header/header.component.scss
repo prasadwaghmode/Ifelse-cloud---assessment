@@ -294,7 +294,7 @@
     } 
     .search-box {
         border: none;
-        border-bottom: 1px solid #000; /* You can change the color by replacing #000 with your desired color code */
+        // border-bottom: 1px solid #000; /* You can change the color by replacing #000 with your desired color code */
         padding: 5px;
         outline: none; /* Remove the default focus outline */
     }
@@ -309,4 +309,12 @@
         font-size: 0.95rem;
         color: #aaa;
         font-style: italic;
+      }
+
+      .profile-header img{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        /* border: 1px solid; */
+        margin-top: 5px;
       }

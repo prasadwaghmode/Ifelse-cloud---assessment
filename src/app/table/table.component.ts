@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input ,EventEmitter} from '@angular/core';
 import { ApiServiceService } from '../api-service.service';
 
 @Component({
@@ -7,14 +7,17 @@ import { ApiServiceService } from '../api-service.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-  cardsData : any;
+  tableData : any;
+  @Input()
+  tableDataInput!: EventEmitter<any>;
+
   constructor( public apiService : ApiServiceService){}
 
   ngOnInit(){
-    this.apiService.getData().subscribe(data => {
-      this.cardsData = data;
-      console.log("data ::>>",data);
-      // Handle the API response here
+    this.tableDataInput.subscribe(data => {
+      if(data){
+        this.tableData = data;
+      }
     });
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input ,EventEmitter} from '@angular/core';
 import { ApiServiceService } from '../api-service.service';
 
 @Component({
@@ -9,13 +9,18 @@ import { ApiServiceService } from '../api-service.service';
 export class CardsComponent {
   title = 'IfElseProject';
   cardsData : any;
-  
+  @Input()
+  cardsDataInput!: EventEmitter<any>;
+
   constructor( public apiService : ApiServiceService){}
+
+ 
+
   ngOnInit(){
-    this.apiService.getData().subscribe(data => {
-      this.cardsData = data;
-      console.log("data ::>>",data);
-      // Handle the API response here
+    this.cardsDataInput.subscribe(cardsData => {
+      if(cardsData){
+        this.cardsData = cardsData;
+      }
     });
   }
 }

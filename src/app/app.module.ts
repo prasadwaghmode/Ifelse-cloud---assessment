@@ -10,6 +10,7 @@ import { TableComponent } from './table/table.component';
 import { GraphComponent } from './graph/graph.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgApexchartsModule } from "ng-apexcharts";
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgApexchartsModule } from "ng-apexcharts";
     CardsComponent,
     TableComponent,
     GraphComponent,
-    DashboardComponent
+    DashboardComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

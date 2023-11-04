@@ -1,10 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="chart">
-    <apx-chart
-      [series]="chartOptions.series"
-      [chart]="chartOptions.chart"
-      [labels]="chartOptions.labels"
-      [responsive]="chartOptions.responsive"
-    ></apx-chart>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 ">
+      <div class="graph">
+      <h4>Sales Statistics </h4>
+      <div id="chart1">
+        <apx-chart [series]="chartOptions1.series" [chart]="chartOptions1.chart"
+          [xaxis]="chartOptions1.xaxis"></apx-chart>
+      </div>
+    </div>
   </div>
-  
+  <div>
+    <div class="col-md-4 ">
+      <div class="graph">
+      <h4>Balance Overview </h4>
+      <div id="chart2 ">
+        <apx-chart [series]="chartOptions2.series" [chart]="chartOptions2.chart"
+          [plotOptions]="chartOptions2.plotOptions" [responsive]="chartOptions2.responsive"
+          [xaxis]="chartOptions2.xaxis" [legend]="chartOptions2.legend" [fill]="chartOptions2.fill"></apx-chart>
+      </div>
+    </div>
+    </div>
+  </div>
+    <div class="col-md-4 ">
+      <div class="graph">
+      <h4>Top Products </h4>
+      <div id="chart">
+        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
+          [responsive]="chartOptions.responsive"></apx-chart>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
